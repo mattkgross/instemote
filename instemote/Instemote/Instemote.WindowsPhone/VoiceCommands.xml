@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">  
+  <CommandSet xml:lang="en-us">
+    <CommandPrefix> turn </CommandPrefix>
+    <Example> on my lights </Example>
+
+    <Command Name="TurnGeneric">
+      <Example> on (or off) my lights </Example>
+      <ListenFor> {action} my lights </ListenFor>
+      <ListenFor> {action} my light </ListenFor>
+      <ListenFor> {action} light </ListenFor>
+      <ListenFor> {action} lights </ListenFor>
+      <ListenFor> {action} the lights </ListenFor>
+      <ListenFor> {action} the light </ListenFor>
+      <Feedback> On it </Feedback>
+      <Navigate Target="MessagePage.xaml"/>
+    </Command>
+
+    <Command Name="TurnScene">
+      <Example> on (or off) 'scene name' </Example>
+      <ListenFor> {action} {sceneName} </ListenFor>  
+      <Feedback> Alright </Feedback>
+      <Navigate Target="MessagePage.xaml"/>
+    </Command>
+
+    <PhraseList Label="action">
+      <Item> on </Item>
+      <Item> off </Item>
+    </PhraseList>
+
+    <PhraseTopic Label="sceneName" Scenario="Natural Language">      
+    </PhraseTopic>
+    
+  </CommandSet>
+</VoiceCommands>

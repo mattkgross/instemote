@@ -1,0 +1,2 @@
+MainPackage=D:\Users\Quinn\CS\Insteon\InsteonRT\Instemote\Instemote\Instemote.WindowsPhone\bin\Release\Instemote.WindowsPhone_2.1.0.0_Bundle\Instemote.WindowsPhone_2.1.0.0_AnyCPU.appx
+SymbolPackage=D:\Users\Quinn\CS\Insteon\InsteonRT\Instemote\Instemote\Instemote.WindowsPhone\AppPackages\Instemote.WindowsPhone_2.1.0.0_Test\Instemote.WindowsPhone_2.1.0.0_AnyCPU.appxsym

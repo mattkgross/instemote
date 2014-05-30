@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="Instemote.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Instemote"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- TitlePanel -->
+        <StackPanel Grid.Row="0" Margin="22,12,0,28">
+            <TextBlock Text="INSTEMOTE" Style="{ThemeResource TitleTextBlockStyle}" Typography.Capitals="SmallCaps"/>
+            <TextBlock Text="settings" Margin="0,0,0,0" Style="{ThemeResource HeaderTextBlockStyle}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <ScrollViewer Grid.Row="1" x:Name="ContentRoot" Margin="22,0,22,0">
+            <StackPanel>  
+                <TextBlock Text="Cortana" FontSize="26" Margin="0,0,0,12" Foreground="{StaticResource PhoneAccentBrush}" />
+                <TextBlock FontSize="18" TextWrapping="Wrap" Text="Select which scene Cortana will turn on or off when you say 'turn on my lights'."/>
+                <ComboBox x:Name="CortanaScene" Margin="0,0,0,0" SelectionChanged="CortanaScene_SelectionChanged" />
+
+                <TextBlock TextWrapping="Wrap" x:Name="CortanaCommands" Text="You can also say &quot;turn on (or off) &lt;scene name&gt;&quot; to turn on or off any scene you have created." FontSize="15" Margin="0,0,0,24" Foreground="#989898" />
+                
+                <TextBlock Text="Geo Fence" FontSize="26" Margin="0,0,0,12" Foreground="{StaticResource PhoneAccentBrush}" />
+                <TextBlock FontSize="18" TextWrapping="Wrap" Text="Geo fencing will allow Instemote to turn on or off your lights automatically when you leave or enter your house."/>
+            
+                <Button Click="SetHome_Click" x:Name="SetHome" Margin="0,12,0,0" Content="mark my current location as home" HorizontalAlignment="Stretch"/>
+                <TextBlock x:Name="HomeText" Text="Current Home: " FontSize="15" Margin="0,0,0,12" Foreground="#989898" />
+
+                <TextBlock FontSize="18" Margin="0,12,0,0" TextWrapping="Wrap" Text="Select which scene will be turned on or off when you leave or enter your house."/>
+                <ComboBox x:Name="GeoFenseScene" Margin="0,0,0,24" SelectionChanged="GeoFenseScene_SelectionChanged" />
+
+                <CheckBox x:Name="LightsOff" Tapped="LightsOff_Checked" Content="Turn off my lights when I leave"/>
+                <CheckBox x:Name="LightsOffAsk" Tapped="LightsOffAsk_Checked" Content="Ask me, don't do it automatically" Margin="24,0,0,0"/>
+                <CheckBox x:Name="LightsOn" Tapped="LightsOn_Checked" Content="Turn on my lights when I arive"/>
+                <CheckBox x:Name="LightsOnAsk" Tapped="LightsOnAsk_Checked" Content="Ask me, don't do it automatically" Margin="24,0,0,0"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
